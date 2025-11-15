@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+
+    <xacro:macro name="wheel" params="prefix">
+        <link name="${prefix}_wheel">
+            <inertial>
+                <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+                <mass value="1.0"/>
+                <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+            </inertial>
+            <visual name="${prefix}_wheel_visual">
+                <origin xyz="0.0 0.0 0.0" rpy="0.0 0 0"/>
+                <geometry>
+                    <cylinder radius="0.05" length="0.025"/>
+                </geometry>
+                <material name="">
+                    <color rgba="0.0 0.0 0.0 1.0"/>
+                    <texture filename=""/>
+                </material>
+            </visual>
+            <collision>
+                <origin xyz="0.0 0.0 0.0" rpy="0.0 0 0"/>
+                <geometry>
+                    <cylinder radius="0.05" length="0.025"/>
+                </geometry>
+            </collision>
+        </link>
+    </xacro:macro>
+    <xacro:wheel prefix= "f_right" />
+    <xacro:wheel prefix= "f_left" />
+    <xacro:wheel prefix= "b_right" />
+    <xacro:wheel prefix= "b_left" />
+
+    <xacro:property name="z" value="-.025" />
+    <joint name="f_left_wheel_joint" type="continuous">
+        <origin xyz="0.14 -0.14 ${z}" rpy="1.5707 0.0 0.0"/>
+        <parent link="base_link"/>
+        <child link="f_left_wheel"/>
+        <axis xyz="0.0 0.0 1.0"/>
+        <limit lower="0.0" upper="0.0" effort="0.0" velocity="0.0"/>
+    </joint>
+    <joint name="f_right_wheel_joint" type="continuous">
+        <origin xyz="0.14 0.14 ${z}" rpy="1.5707 0.0 0.0"/>
+        <parent link="base_link"/>
+        <child link="f_right_wheel"/>
+        <axis xyz="0.0 0.0 1.0"/>
+        <limit lower="0.0" upper="0.0" effort="0.0" velocity="0.0"/>
+    </joint>
+    <joint name="b_left_wheel_joint" type="continuous">
+        <origin xyz="-0.14 -0.14 ${z}" rpy="1.5707 0.0 0.0"/>
+        <parent link="base_link"/>
+        <child link="b_left_wheel"/>
+        <axis xyz="0.0 0.0 1.0"/>
+        <limit lower="0.0" upper="0.0" effort="0.0" velocity="0.0"/>
+    </joint>
+    <joint name="b_right_wheel_joint" type="continuous">
+        <origin xyz="-0.14 0.14 ${z}" rpy="1.5707 0.0 0.0"/>
+        <parent link="base_link"/>
+        <child link="b_right_wheel"/>
+        <axis xyz="0.0 0.0 1.0"/>
+        <limit lower="0.0" upper="0.0" effort="0.0" velocity="0.0"/>
+    </joint>
+
+
+</robot>

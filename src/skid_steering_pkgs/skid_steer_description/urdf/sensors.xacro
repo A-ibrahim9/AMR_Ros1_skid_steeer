@@ -1,0 +1,160 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <link name="lidar">
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <mass value="0.0"/>
+              <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+        </inertial>
+        <visual name="lidar_visual">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <mesh filename="package://skid_steer_description/meshes/lidaar_link.STL"/>
+            </geometry>
+            <material name="">
+                <color rgba=".15 .15 .15 1.0"/>
+                <texture filename=""/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.1 0.1 0.1"/>
+            </geometry>
+        </collision>
+    </link>
+    <joint name="lidar_joint" type="fixed">
+        <origin xyz="0.0 -0.01 0.05" rpy="1.5707 0 1.5707"/>
+        <parent link="above_base"/>
+        <child link="lidar"/>
+        <axis xyz="0.0 0.0 0.0"/>
+        <limit lower="0.0" upper="0.0" effort="0.0" velocity="0.0"/>
+    </joint>
+
+    <link name="laser_support">
+    </link>
+    <joint name="laser_support_joint" type="fixed">
+        <origin xyz="0.0 0.0 0.0" rpy="0 -1.5707 -1.5707"/>
+        <parent link="lidar"/>
+        <child link="laser_support"/>
+        <axis xyz="0.0 0.0 0.0"/>
+        <limit lower="0.0" upper="0.0" effort="0.0" velocity="0.0"/>
+    </joint>
+
+
+
+    <link name="kinect">
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <mass value="0.2"/>
+            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+        </inertial>
+        <visual name="kinect_visual">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <mesh filename="package://skid_steer_description/meshes/kinect.dae" scale="0.5 0.5 0.5"/>
+            </geometry>
+            <material name="">
+                <color rgba=".15 .15 .15 1.0"/>
+                <texture filename=""/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.1 0.1 0.1"/>
+            </geometry>
+        </collision>
+    </link>
+    <joint name="kinect_joint" type="fixed">
+        <origin xyz="0.017 0.0 0.125" rpy="0 0 0"/>
+        <parent link="middle_base"/>
+        <child link="kinect"/>
+        <axis xyz="0.0 0.0 0.0"/>
+        <limit lower="0.0" upper="0.0" effort="0.0" velocity="0.0"/>
+    </joint>
+
+    <link name="ultrasonic_right_s">
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <mass value="0.1"/>
+            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+        </inertial>
+        <visual name="ultrasonic_right_s_visual">
+            <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://skid_steer_description/meshes/HCSR04_Ultrasonic_Sensor.stl" scale=".035 .035 .04" />
+            </geometry>
+            <material name="">
+                <color rgba=".15 .15 .15 1.0"/>
+                <texture filename=""/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.1 0.1 0.1"/>
+            </geometry>
+        </collision>
+    </link>
+    <joint name="ultrasonic_right_s_joint" type="fixed">
+        <origin xyz="0.01 0.09 0.0" rpy="1.5707 0 1.5707"/>
+        <parent link="front_base"/>
+        <child link="ultrasonic_right_s"/>
+        <axis xyz="0.0 0.0 0.0"/>
+        <limit lower="0.0" upper="0.0" effort="0.0" velocity="0.0"/>
+    </joint>
+    <link name="ultrasonic_support_r">
+    </link>
+    <joint name="ultrasonic_support_r_joint" type="fixed">
+        <origin xyz="0.0 0.0 0.0" rpy="0 -1.5707 -1.5707"/>
+        <parent link="ultrasonic_right_s"/>
+        <child link="ultrasonic_support_r"/>
+        <axis xyz="0.0 0.0 0.0"/>
+        <limit lower="0.0" upper="0.0" effort="0.0" velocity="0.0"/>
+    </joint>
+
+
+
+    <link name="ultrasonic_left_s">
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <mass value="0.1"/>
+            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+        </inertial>
+        <visual name="ultrasonic_left_s_visual">
+            <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://skid_steer_description/meshes/HCSR04_Ultrasonic_Sensor.stl" scale=".035 .035 .04" />
+            </geometry>
+            <material name="">
+                <color rgba=".15 .15 .15 1.0"/>
+                <texture filename=""/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.1 0.1 0.1"/>
+            </geometry>
+        </collision>
+    </link>
+    <joint name="ultrasonic_left_s_joint" type="fixed">
+        <origin xyz="0.01 -0.09 0.0" rpy="1.5707 0 1.5707"/>
+        <parent link="front_base"/>
+        <child link="ultrasonic_left_s"/>
+        <axis xyz="0.0 0.0 0.0"/>
+        <limit lower="0.0" upper="0.0" effort="0.0" velocity="0.0"/>
+    </joint>
+
+    <link name="ultrasonic_support_l">
+    </link>
+    <joint name="ultrasonic_support_l_joint" type="fixed">
+        <origin xyz="0.0 0.0 0.0" rpy="0 -1.5707 -1.5707"/>
+        <parent link="ultrasonic_left_s"/>
+        <child link="ultrasonic_support_l"/>
+        <axis xyz="0.0 0.0 0.0"/>
+        <limit lower="0.0" upper="0.0" effort="0.0" velocity="0.0"/>
+    </joint>
+</robot>

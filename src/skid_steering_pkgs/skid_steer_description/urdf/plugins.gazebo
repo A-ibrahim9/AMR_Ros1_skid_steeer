@@ -1,0 +1,239 @@
+<?xml version="1.0"?>
+<diff_drive>
+
+    <gazebo>
+        <plugin name="skid_steer_drive_controller" filename="libgazebo_ros_skid_steer_drive.so">
+            <updateRate>80.0</updateRate>
+            <robotNamespace>/</robotNamespace>
+            <leftFrontJoint>f_left_wheel_joint</leftFrontJoint>
+            <rightFrontJoint>f_right_wheel_joint</rightFrontJoint>
+            <leftRearJoint>b_left_wheel_joint</leftRearJoint>
+            <rightRearJoint>b_right_wheel_joint</rightRearJoint>
+            <wheelSeparation>0.33</wheelSeparation>
+            <wheelDiameter>0.05</wheelDiameter>
+            <robotBaseFrame>baseElbase</robotBaseFrame>
+            <torque>20</torque>
+            <topicName>cmd_vel</topicName>
+            <broadcastTF>true</broadcastTF>
+            <odomFrame>odom</odomFrame>
+            <publishTf>true</publishTf>
+            <odometryTopic>odom</odometryTopic>
+            <!-- <rosDebugLevel>na</rosDebugLevel> -->
+            
+        </plugin>
+    </gazebo>
+
+    <!-- ================== material color ====================== -->
+
+    <gazebo reference="baseElbase">
+        <material>Gazebo/Orange</material>
+    </gazebo>
+    <gazebo reference="base_link">
+        <material>Gazebo/Orange</material>
+    </gazebo>
+    <gazebo reference="f_right_wheel">
+        <material>Gazebo/Black</material>
+    </gazebo>
+    <gazebo reference="b_right_wheel">
+        <material>Gazebo/Black</material>
+    </gazebo>
+    <gazebo reference="f_left_wheel">
+        <material>Gazebo/Black</material>
+    </gazebo>
+    <gazebo reference="b_left_wheel">
+        <material>Gazebo/Black</material>
+    </gazebo>
+    <gazebo reference="lidar">
+        <material>Gazebo/Gray</material>
+    </gazebo>
+    <gazebo reference="laser_support">
+        <material>Gazebo/Black</material>
+    </gazebo>
+    <gazebo reference="above_base">
+        <material>Gazebo/Orange</material>
+    </gazebo>
+    <gazebo reference="kinect">
+        <material>Gazebo/Gray</material>
+    </gazebo>
+    <gazebo reference="middle_base">
+        <material>Gazebo/Black</material>
+    </gazebo>
+    <gazebo reference="front_base">
+        <material>Gazebo/Orange</material>
+    </gazebo>
+    <gazebo reference="ultrasonic_left_s">
+        <material>Gazebo/Gray</material>
+    </gazebo>    
+    <gazebo reference="ultrasonic_right_s">
+        <material>Gazebo/Gray</material>
+    </gazebo>
+
+    <!-- ================== lidar plugins ====================== -->
+    <gazebo reference="laser_support">
+        <sensor type="ray" name="rplidar">
+            <pose>0 0 0 0 0 0</pose>
+            <visualize>true</visualize>
+            <update_rate>10</update_rate>
+            <ray>
+                <scan>
+                    <horizontal>
+                        <samples>720</samples>
+                        <resolution>1</resolution>
+                        <min_angle>0</min_angle>
+                        <max_angle>6.28319</max_angle>
+                    </horizontal>
+                </scan>
+                <range>
+                    <min>0.1</min>
+                    <max>6.0</max>
+                    <resolution>0.01</resolution>
+                </range>
+
+                <noise>
+                    <type>gaussian</type>
+                    <mean>0.0</mean>
+                    <stddev>0.01</stddev>
+                </noise>
+            </ray>
+            <plugin name="gazebo_ros_head_hokuyo_controller" filename="libgazebo_ros_laser.so">
+                <topicName>/scan</topicName>
+                <frameName>laser_support</frameName>
+            </plugin>
+        </sensor>
+    </gazebo>
+
+    <!-- ================== kinect plugins ====================== -->
+
+    <gazebo reference="kinect">
+        <sensor type="depth" name="kinect_sensor">
+            <always_on>true</always_on>
+            <update_rate>30.0</update_rate>
+            <visualize>true</visualize>
+            <pose>0 0 0 0 0 0</pose>
+
+            <camera>
+                <horizontal_fov>1.047</horizontal_fov>
+                <image>
+                    <width>640</width>
+                    <height>480</height>
+                    <format>R8G8B8</format>
+                </image>
+                <clip>
+                    <near>0.05</near>
+                    <far>8.0</far>
+                </clip>
+            </camera>
+
+            <plugin name="camera_controller" filename="libgazebo_ros_openni_kinect.so">
+                <robotNamespace>/</robotNamespace>
+                <cameraName>kinect</cameraName>
+
+                <!-- RGB camera topics -->
+                <imageTopicName>/camera/rgb/image_raw</imageTopicName>
+                <cameraInfoTopicName>/camera/rgb/camera_info</cameraInfoTopicName>
+
+                <!-- Depth camera topics -->
+                <depthImageTopicName>/camera/depth/image_raw</depthImageTopicName>
+                <depthCameraInfoTopicName>/camera/depth/camera_info</depthCameraInfoTopicName>
+
+                <!-- Point cloud topic -->
+                <pointCloudTopicName>/camera/depth/points</pointCloudTopicName>
+
+                <!-- Frames -->
+                <frameName>kinect</frameName>
+                <depthFrameName>kinect_depth_frame</depthFrameName>
+                <rgbFrameName>kinect_rgb_frame</rgbFrameName>
+
+                <!-- Optional settings -->
+                <pointCloudCutoff>0.5</pointCloudCutoff>
+                <pointCloudCutoffMax>5.0</pointCloudCutoffMax>
+                <distortion_k1>0.0</distortion_k1>
+                <distortion_k2>0.0</distortion_k2>
+                <distortion_k3>0.0</distortion_k3>
+                <distortion_t1>0.0</distortion_t1>
+                <distortion_t2>0.0</distortion_t2>
+                <updateRate>30.0</updateRate>
+            </plugin>
+        </sensor>
+    </gazebo>
+
+    <!-- ================== RIGHT ULTRASONIC ================== -->
+
+    <gazebo reference="ultrasonic_support_r">
+        <sensor type="ray" name="ultrasonic_right_sensor">
+            <always_on>true</always_on>
+            <update_rate>40</update_rate>
+            <visualize>true</visualize>
+            <pose>0 0 0 0 0 0</pose>
+            <ray>
+                <scan>
+                    <horizontal>
+                        <samples>25</samples>
+                        <resolution>1</resolution>
+                        <min_angle>-0.05</min_angle>
+                        <max_angle>0.05</max_angle>
+                    </horizontal>
+                </scan>
+                <range>
+                    <min>0.02</min>
+                    <max>10.0</max>
+                    <resolution>0.001</resolution>
+                </range>
+            </ray>
+
+
+            <plugin name="ultrasonic_right_plugin" filename="libgazebo_ros_range.so">
+                <ros>
+                    <namespace>/</namespace>
+                    <remapping>~/out:=/ultrasonic/right/range</remapping>
+                </ros>
+                <frameName>ultrasonic_support_r</frameName>
+                <topicName>/ultrasonic/right/range</topicName>
+                <radiation>ultrasound</radiation>
+                <fov>1</fov>
+                <updateRate>40</updateRate>
+            </plugin>
+        </sensor>
+    </gazebo> 
+
+
+    <!-- ================== LEFT ULTRASONIC ================== -->
+
+    <gazebo reference="ultrasonic_support_l">
+        <sensor type="ray" name="ultrasonic_left_sensor">
+            <always_on>true</always_on>
+            <update_rate>40</update_rate>
+            <visualize>true</visualize>
+            <pose>0 0 0 0 0 0</pose>
+            <ray>
+                <scan>
+                    <horizontal>
+                        <samples>25</samples>
+                        <resolution>1</resolution>
+                        <min_angle>-0.05</min_angle>
+                        <max_angle>0.05</max_angle>
+                    </horizontal>
+                </scan>
+                <range>
+                    <min>0.02</min>
+                    <max>10.0</max>
+                    <resolution>0.001</resolution>
+                </range>
+            </ray>
+
+            <plugin name="ultrasonic_left_plugin" filename="libgazebo_ros_range.so">
+                <ros>
+                    <namespace>/</namespace>
+                    <remapping>~/out:=/ultrasonic/left/range</remapping>
+                </ros>
+                <frameName>ultrasonic_support_l</frameName>
+                <topicName>/ultrasonic/left/range</topicName>
+                <radiation>ultrasound</radiation>
+                <fov>1</fov>
+                <updateRate>40</updateRate>
+            </plugin>
+        </sensor>
+    </gazebo>
+
+
+</diff_drive>

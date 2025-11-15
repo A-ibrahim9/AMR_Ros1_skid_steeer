@@ -1,0 +1,24 @@
+
+# project 1
+<!-- انا لقيت الورلد بس الروبوت محتاج بتظبط ابعاده +الاحمال +ضيف باقي السينسور -->
+record the custom robot in a good world + move teleop + move in rviz , see odom, tf
+take perfect shot for your robot without laser
+explain process --> urdf xacro plugin add sensors lidar (if you will add imu or gps or camera) 
+
+next
+gmapping
++
+amcl
++
+nav
+same robot
+
+not to share until github done and linkedin intro
++ github documantation important
+---
+
+# project 2 SAME project 1 but
+
+not custom but turtlebot3 in maze 
++
+grabcad/design soildworks to urdf --> record this
