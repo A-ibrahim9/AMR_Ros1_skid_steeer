@@ -1,0 +1,8 @@
+prefix=/home/ahmed/all_Practice/ros_diploma/AMR_Ros1_Projects/install
+
+Name: turtlebot3_navigation
+Description: Description of turtlebot3_navigation
+Version: 1.2.6
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

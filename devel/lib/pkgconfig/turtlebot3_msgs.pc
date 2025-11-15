@@ -1,0 +1,8 @@
+prefix=/home/ahmed/all_Practice/ros_diploma/AMR_Ros1_Projects/devel
+
+Name: turtlebot3_msgs
+Description: Description of turtlebot3_msgs
+Version: 1.0.1
+Cflags: -I/home/ahmed/all_Practice/ros_diploma/AMR_Ros1_Projects/devel/include
+Libs: -L${prefix}/lib 
+Requires: std_msgs message_runtime

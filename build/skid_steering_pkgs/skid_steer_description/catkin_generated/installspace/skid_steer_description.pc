@@ -1,0 +1,8 @@
+prefix=/home/ahmed/all_Practice/ros_diploma/AMR_Ros1_Projects/install
+
+Name: skid_steer_description
+Description: Description of skid_steer_description
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

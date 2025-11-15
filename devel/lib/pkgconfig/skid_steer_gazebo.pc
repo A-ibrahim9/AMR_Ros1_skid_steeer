@@ -1,0 +1,8 @@
+prefix=/home/ahmed/all_Practice/ros_diploma/AMR_Ros1_Projects/devel
+
+Name: skid_steer_gazebo
+Description: Description of skid_steer_gazebo
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

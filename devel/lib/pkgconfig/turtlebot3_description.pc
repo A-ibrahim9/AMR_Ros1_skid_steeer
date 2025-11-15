@@ -1,0 +1,8 @@
+prefix=/home/ahmed/all_Practice/ros_diploma/AMR_Ros1_Projects/devel
+
+Name: turtlebot3_description
+Description: Description of turtlebot3_description
+Version: 1.2.6
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: urdf xacro

@@ -1,0 +1,2 @@
+set(turtlebot3_msgs_MESSAGE_FILES "/home/ahmed/all_Practice/ros_diploma/AMR_Ros1_Projects/src/turtlebot3_pkgs/turtlebot3_msgs/msg/SensorState.msg;/home/ahmed/all_Practice/ros_diploma/AMR_Ros1_Projects/src/turtlebot3_pkgs/turtlebot3_msgs/msg/VersionInfo.msg;/home/ahmed/all_Practice/ros_diploma/AMR_Ros1_Projects/src/turtlebot3_pkgs/turtlebot3_msgs/msg/Sound.msg")
+set(turtlebot3_msgs_SERVICE_FILES "")
