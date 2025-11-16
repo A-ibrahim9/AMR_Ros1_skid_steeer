@@ -7,19 +7,21 @@ The project includes robot modeling, Gazebo plugins, teleoperation, and environm
 ---
 
 ## 📌 Table of Contents
-- [GIF](#GIF)
+- [GIF](#gif)
 - [Project Overview](#project-overview)
 - [Repository Structure](#repository-structure)
 - [Requirements](#requirements)
 - [How to Run](#how-to-run)
 - [Launch Files](#launch-files)
-- [TF Tree](#tf_tree)
+- [TF Tree](#tf-tree)
 - [Topics](#topics)
-- [Demo & Result](#Demo_&_Result)
+- [Demo & Result](#demo--result)
 - [Future Improvements](#future-improvements)
 - [Author](#author)
 
+
 ---
+
 ## GIF
 
 ![GIF](https://github.com/user-attachments/assets/3f3a9e9c-25ad-4b8b-9171-b522d0370a67)
@@ -203,33 +205,43 @@ rosrun map_server map_saver -f my_map
 
 ## Demo & Result
 
-### Demo
+- ### Demo
 
-### Result
+<video width="600" controls>
+  <source src="skid_steer_gazebo/demo_gazebo/AMR_demo_gazebo_fast.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
-- **Robot in Gazebo**
+- ### Result
 
-<img width="1183" height="1010" alt="R_gazebo" src="https://github.com/user-attachments/assets/6e2b2d62-08fe-42d8-af11-8ce2b3446678" />
+<table>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/6e2b2d62-08fe-42d8-af11-8ce2b3446678" width="400"></td>
+    <td><img src="https://github.com/user-attachments/assets/81c059f3-b4ff-4097-b886-09a7c7842e73" width="400"></td>
+  </tr>
+  <tr>
+    <td>Gazebo Simulation</td>
+    <td>Rviz Visualization</td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/ba0a9084-9f3c-4e64-aad4-6567df58b2d0" width="400"></td>
+    <td><img src="https://github.com/user-attachments/assets/1b24865d-592d-4529-b28f-244510881614" width="400"></td>
+  </tr>
+  <tr>
+    <td>My World</td>
+    <td>LiDAR Data</td>
+  </tr>
+   <tr>
+    <td><img src="https://github.com/user-attachments/assets/e42f4789-de26-47cd-939a-426466767719" width="400"></td>
+    <td><img src="https://github.com/user-attachments/assets/72bbd5fa-be31-45c9-9c0c-578a330fc47a" width="400"></td>
+  </td>
+  </tr>
+  <tr>
+    <td>Kinect Data</td>
+    <td>Ultrasonic Data</td>
+  </tr>
+</table>
 
-- **Robot in Rviz**
-
-<img width="1131" height="923" alt="R_rviz" src="https://github.com/user-attachments/assets/81c059f3-b4ff-4097-b886-09a7c7842e73" />
-
-- **My World**
-
-<img width="1345" height="737" alt="myWorld" src="https://github.com/user-attachments/assets/ba0a9084-9f3c-4e64-aad4-6567df58b2d0" />
-
-- **Data of LiDAR**
-
-<img width="1914" height="861" alt="data_of_lidar" src="https://github.com/user-attachments/assets/1b24865d-592d-4529-b28f-244510881614" />
-
-- **Data of Camera Kinect**
-
-<img width="939" height="465" alt="data_of_camera_kinect" src="https://github.com/user-attachments/assets/1bcd089b-3577-42c4-819d-41028b4ba3ab" />
-
-- **Data_of ultrasonic**
-
-<img width="1914" height="781" alt="data_of_ultrasonic" src="https://github.com/user-attachments/assets/733b470e-2164-49be-a81c-5d5c1bfd1a97" />
 
 ---
 ## 🔮 Future Work
