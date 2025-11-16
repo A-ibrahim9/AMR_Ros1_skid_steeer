@@ -1,5 +1,5 @@
 
-# 🚗 AMR Ros1 Skid-Steer Robot — Simulation & Control
+# AMR Ros1 Skid-Steer Robot — Simulation & Control 🚗
 
 This repository contains a complete **ROS Noetic** package for simulating and controlling a **Skid-Steer Autonomous Mobile Robot (AMR)** using **Gazebo** and **URDF/Xacro**.  
 The project includes robot modeling, Gazebo plugins, teleoperation, and environment setup.
@@ -8,17 +8,16 @@ The project includes robot modeling, Gazebo plugins, teleoperation, and environm
 
 ## 📌 Table of Contents
 - [GIF](#gif)
-- [Project Overview](#project-overview)
-- [Repository Structure](#repository-structure)
-- [Requirements](#requirements)
-- [How to Run](#how-to-run)
-- [Launch Files](#launch-files)
-- [TF Tree](#tf-tree)
-- [Topics](#topics)
-- [Demo & Result](#demo--result)
-- [Future Improvements](#future-improvements)
-- [Author](#author)
-
+- [Project Overview](#-project-overview)
+- [Repository Structure](#-repository-structure)
+- [Requirements](#-requirements)
+- [How to Run](#-how-to-run)
+- [Launch Files](#-launch-files)
+- [TF Tree](#-tf-tree)
+- [ROS Topics](#-ros-topics)
+- [Demo & Result](#-demo--result)
+- [Future Improvements](#-future-improvements)
+- [Author](#-author)
 
 ---
 
@@ -80,7 +79,7 @@ AMR_Ros1_skid_steer/
 ```
 ---
 
-## 🖥️ Requirements
+## 📄 Requirements
 
 | Component | Version |
 |----------|---------|
@@ -96,7 +95,7 @@ sudo apt install ros-noetic-teleop-twist-keyboard
 ```
 ---
 
-## 🚀 How to Run the Project
+## 🏭 How to Run
 
 **1️⃣ Clone the repository**
 ```bash
@@ -142,7 +141,7 @@ rosrun map_server map_saver -f my_map
 
 ---
 
-## Build Process
+## 🛠️ Build Process
 
 ### 1️⃣ Robot Modeling (skid_steer_description)
 - Started by building the main robot model using **URDF/Xacro**.
@@ -203,14 +202,11 @@ rosrun map_server map_saver -f my_map
 
 ---
 
-## Demo & Result
+## 🎬 Demo & Result
 
-- ### Demo
+- ### Demo (click to watch the demo)
 
-<video width="600" controls>
-  <source src="skid_steer_gazebo/demo_gazebo/AMR_demo_gazebo_fast.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+[![Watch the demo](https://img.youtube.com/vi/4qr4Fn-11UY/0.jpg)](https://youtu.be/4qr4Fn-11UY)
 
 - ### Result
 
@@ -244,9 +240,18 @@ rosrun map_server map_saver -f my_map
 
 
 ---
-## 🔮 Future Work
+
+## 🔮 Future Improvements
 
 The following modules are planned and will be added later:
 - AMCL Localization
 - Full Navigation Stack (Global + Local Planners)
 - Sensor Fusion (IMU, wheel encoders)
+
+---
+
+## 👤 Author
+
+Ahmed Ibrahim
+- Teaching Assistant — Fayoum University
+- Robotics Engineer
