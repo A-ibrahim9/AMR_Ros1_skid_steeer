@@ -1,5 +1,5 @@
 
-# AMR Ros1 Skid-Steer Robot — Simulation & Control 🚗
+# AMR Ros1 Skid-Steer Robot — Simulation & Control
 
 This repository contains a complete **ROS Noetic** package for simulating and controlling a **Skid-Steer Autonomous Mobile Robot (AMR)** using **Gazebo** and **URDF/Xacro**.  
 The project includes robot modeling, Gazebo plugins, teleoperation, and environment setup.
@@ -16,9 +16,7 @@ The project includes robot modeling, Gazebo plugins, teleoperation, and environm
 - [TF Tree](#-tf-tree)
 - [ROS Topics](#-ros-topics)
 - [Demo & Result](#-demo--result)
-- [Future Improvements](#-future-improvements)
-- [Author](#-author)
-
+- [Future Improvements](#future-improvements)
 ---
 
 ## GIF
@@ -242,17 +240,9 @@ rosrun map_server map_saver -f my_map
 
 ---
 
-## 🔮 Future Improvements
+## Future Improvements
 
 The following modules are planned and will be added later:
 - AMCL Localization
 - Full Navigation Stack (Global + Local Planners)
 - Sensor Fusion (IMU, wheel encoders)
-
----
-
-## 👤 Author
-
-Ahmed Ibrahim
-- Teaching Assistant — Fayoum University
-- Robotics Engineer
