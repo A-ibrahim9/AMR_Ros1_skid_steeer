@@ -44,7 +44,7 @@ The goal is to build a modular simulation-ready platform for mapping, perception
 ---
 
 ## 📂 Repository Structure
-```
+```py
 AMR_Ros1_skid_steer/
 │
 ├── src/
